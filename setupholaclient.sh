@@ -10,7 +10,7 @@ apt install git -y
 apt install nano -y
 
 # Clone HolaClient repository
-git clone https://github.com/HolaClient/HolaClient.git
+git clone https://github.com/HolaClient/HolaClient/releases/download/v1.5.8/HolaClient-1.5.8.zip
 
 # Install Node.js and dependencies
 curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
@@ -30,6 +30,7 @@ rm /etc/nginx/sites-enabled/default
 certbot certonly --nginx -d portal.cometrakko.com
 
 # Navigate to HolaClient directory
+cp HolaClient-1.5.8 HolaClient
 cd HolaClient
 cp .env.example .env
 
