@@ -162,7 +162,7 @@
               "backups": 4
             }
           }
-        }
+        },
       "coins": {
         "enabled": true,
         "store": {
