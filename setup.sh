@@ -1,7 +1,9 @@
-echo "Selecciona el script:"
-echo "1. HolaClient Scrip"
-echo "2. Panel Script"
-read -p "Enter the number of the script: " choice
+echo "*==================================*"
+echo "*       Selecciona el script:      *"
+echo "*       1. HolaClient Scrip        *"
+echo "*       2. Panel Script            *"
+echo "*==================================*"
+read -p "Enter the number of the script:  " choice
 
 case $choice in
     1)
