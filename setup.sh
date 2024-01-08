@@ -10,7 +10,7 @@ case $choice in
         bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/holaclient.sh)
         ;;
     2)
-        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/eggs/master/panel.sh)
+        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/panel.sh)
         ;;
     *)
         echo "Invalid choice. Exiting."
