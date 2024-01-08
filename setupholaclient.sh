@@ -16,7 +16,7 @@ curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
 apt-get install -y nodejs gcc g++ make
 
 # Install SSL and Firewall
-apt install firewalld
+apt install firewalld -y
 firewall-cmd --zone=public --add-port=8080/tcp --permanent 
 firewall-cmd --zone=public --add-port=2022/tcp --permanent
 firewall-cmd --zone=public --add-port=80/tcp --permanent
