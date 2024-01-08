@@ -9,6 +9,7 @@ mkdir /var/www/
 apt install git -y
 apt install nano -y
 apt install boxes -y
+sudo apt-get install unzip -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
 echo "Descargando Panel" | boxes -d peek -a c -s 40x1
 # Clone HolaClient repository
