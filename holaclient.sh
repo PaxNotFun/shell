@@ -12,7 +12,7 @@ apt install boxes -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
 echo "Descargando Panel" | boxes -d peek -a c -s 40x1
 # Clone HolaClient repository
-git clone https://github.com/PaxNotFun/shell/raw/main/HolaClient-1.5.8.zip
+git clone https://github.com/PaxNotFun/shell/raw/main/HolaClient.zip
 
 echo "Configurando Firewall" | boxes -d peek -a c -s 40x1
 # Install SSL and Firewall
@@ -35,7 +35,6 @@ curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 apt-get install nodejs gcc g++ make -y
 
 # Navigate to HolaClient directory
-cp HolaClient-1.5.8 HolaClient
 cd HolaClient
 cp .env.example .env
 
