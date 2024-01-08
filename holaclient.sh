@@ -74,8 +74,8 @@ location /afkwspath {
 }
     
     server_name portals.cometrakko.com;
-ssl_certificate /etc/letsencrypt/live/portals/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/portals/privkey.pem;
+ssl_certificate /etc/letsencrypt/live/portalscometrakko.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/portalscometrakko.com/privkey.pem;
     ssl_session_cache shared:SSL:10m;
     ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
     ssl_ciphers  HIGH:!aNULL:!MD5;
