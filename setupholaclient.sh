@@ -6,14 +6,14 @@ apt upgrade -y
 
 # Create web directory and install Git
 mkdir /var/www/
-apt -y install git
+apt install git -y
 
 # Clone HolaClient repository
 git clone https://github.com/HolaClient/HolaClient.git
 
 # Install Node.js and dependencies
 curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
-apt-get install -y nodejs gcc g++ make
+apt-get install nodejs gcc g++ make -y
 
 # Install SSL and Firewall
 apt install firewalld -y
@@ -33,7 +33,7 @@ cd HolaClient
 
 # Install Yarn
 sudo apt-get update
-sudo apt-get install yarn
+sudo apt-get install yarn -y
 
 # Install npm dependencies
 npm i
