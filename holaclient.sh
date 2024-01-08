@@ -38,6 +38,8 @@ apt-get install nodejs gcc g++ make -y
 # Navigate to HolaClient directory
 cd /var/www/heliactyl
 rm -rf settings.json
+wget https://raw.githubusercontent.com/PaxNotFun/shell/main/settings.json
+
 # Install Yarn
 sudo apt-get update
 sudo apt-get install yarn -y
