@@ -8,6 +8,8 @@ apt upgrade -y
 mkdir /var/www/
 apt install git -y
 apt install nano -y
+apt install boxes -y
+echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
 
 # Clone HolaClient repository
 git clone https://github.com/HolaClient/HolaClient/releases/download/v1.5.8/HolaClient-1.5.8.zip
