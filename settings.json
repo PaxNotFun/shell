@@ -23,7 +23,7 @@
     "note": "leave empty to disable!"
   },
   "pterodactyl": {
-    "domain": "https://panel.example.com",
+    "domain": "https://dash.cometrakko.com",
     "key": "ptla_",
     "account_key": "ptlc_"
   },
