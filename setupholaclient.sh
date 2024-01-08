@@ -7,6 +7,7 @@ apt upgrade -y
 # Create web directory and install Git
 mkdir /var/www/
 apt install git -y
+apt install nano -y
 
 # Clone HolaClient repository
 git clone https://github.com/HolaClient/HolaClient.git
@@ -30,6 +31,7 @@ certbot certonly --nginx -d portal.cometrakko.com
 
 # Navigate to HolaClient directory
 cd HolaClient
+cp .env.example .env
 
 # Install Yarn
 sudo apt-get update
@@ -42,7 +44,7 @@ npm i
 npm i -g pm2
 
 # Start HolaClient with pm2
-pm2 start --name "holaclient" /src/app.js
+pm2 start --name "holaclient" src/app.js
 
 # Configure pm2 to start on system boot
 pm2 startup
