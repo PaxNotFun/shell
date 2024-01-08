@@ -13,7 +13,7 @@
     "secret": "Apixelados"
   },
   "pterodactyl": {
-    "domain": "https://portal.cometrakko.com",
+    "domain": "https://dash.cometrakko.com",
     "key": "ptla_tRI9xpG6BSPfgqMondPsk2RO5JC1qhiyjDkOTmzBaRE"
   },
   "linkvertise": {
@@ -91,7 +91,7 @@
         "_comment": "Go to https://discord.dev/ and create an application to set these up.",
         "id": "1193762513947471882",
         "secret": "lQ5KvIzbEuCN7XNC3221vklxmIvhv1D6",
-        "link": "https://portal.cometrakko.com",
+        "link": "https://portals.cometrakko.com",
         "callbackpath": "/callback",
         "prompt": true,
         "ip": {
