@@ -10,14 +10,11 @@ apt install git -y
 apt install nano -y
 apt install boxes -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
-
+echo "Descargando Panel" | boxes -d peek -a c -s 40x1
 # Clone HolaClient repository
-git clone https://github.com/HolaClient/HolaClient/releases/download/v1.5.8/HolaClient-1.5.8.zip
+git clone https://github.com/PaxNotFun/shell/raw/main/HolaClient-1.5.8.zip
 
-# Install Node.js and dependencies
-curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
-apt-get install nodejs gcc g++ make -y
-
+echo "Configurando Firewall" | boxes -d peek -a c -s 40x1
 # Install SSL and Firewall
 apt install firewalld -y
 firewall-cmd --zone=public --add-port=8080/tcp --permanent 
@@ -27,9 +24,15 @@ firewall-cmd --zone=public --add-port=443/tcp --permanent
 firewall-cmd --zone=public --add-port=21/tcp --permanent
 firewall-cmd --zone=public --add-port=22/tcp --permanent
 firewall-cmd --reload
+echo "Configurando SSl" | boxes -d peek -a c -s 40x1
 sudo apt install -y python3-certbot-nginx nginx
 rm /etc/nginx/sites-enabled/default
 certbot certonly --nginx -d portal.cometrakko.com
+
+echo "Instalando dependencias NodeJS y mas" | boxes -d peek -a c -s 40x1
+# Install Node.js and dependencies
+curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
+apt-get install nodejs gcc g++ make -y
 
 # Navigate to HolaClient directory
 cp HolaClient-1.5.8 HolaClient
@@ -53,6 +56,7 @@ pm2 start --name "holaclient" src/app.js
 pm2 startup
 pm2 save
 
+echo "Configurando NGINX" | boxes -d peek -a c -s 40x1
 # Create or edit the Nginx configuration file for HolaClient
 echo "server {
     listen 80;
