@@ -28,7 +28,7 @@ firewall-cmd --reload
 echo "Configurando SSl" | boxes -d peek -a c -s 40x1
 sudo apt install -y python3-certbot-nginx nginx
 rm /etc/nginx/sites-enabled/default
-certbot certonly --nginx -d portal.cometrakko.com
+certbot certonly --nginx -d portals.cometrakko.com
 
 echo "Instalando dependencias NodeJS y mas" | boxes -d peek -a c -s 40x1
 # Install Node.js and dependencies
@@ -61,7 +61,7 @@ echo "Configurando NGINX" | boxes -d peek -a c -s 40x1
 # Create or edit the Nginx configuration file for HolaClient
 echo "server {
     listen 80;
-    server_name portal.cometrakko.com;
+    server_name portals.cometrakko.com;
     return 301 https://$server_name$request_uri;
 }
 server {
@@ -73,9 +73,9 @@ location /afkwspath {
   proxy_pass "http://localhost:2000/afkwspath";
 }
     
-    server_name portal.cometrakko.com;
-ssl_certificate /etc/letsencrypt/live/<domain>/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/<domain>/privkey.pem;
+    server_name portals.cometrakko.com;
+ssl_certificate /etc/letsencrypt/live/portals/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/portals/privkey.pem;
     ssl_session_cache shared:SSL:10m;
     ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
     ssl_ciphers  HIGH:!aNULL:!MD5;
