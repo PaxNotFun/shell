@@ -13,9 +13,7 @@ apt install unzip -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
 echo "Descargando Panel" | boxes -d peek -a c -s 40x1
 # Clone HolaClient repository
-wget https://github.com/PaxNotFun/shell/raw/main/HolaClient.zip
-unzip HolaClient.zip
-rm -rf HolaClient.zip
+git clone https://github.com/HolaClient/HolaClient
 
 echo "Configurando Firewall" | boxes -d peek -a c -s 40x1
 # Install SSL and Firewall
@@ -39,7 +37,6 @@ apt-get install nodejs gcc g++ make -y
 
 # Navigate to HolaClient directory
 cd HolaClient
-rm -rf settings.json
 wget https://raw.githubusercontent.com/PaxNotFun/shell/main/settings.json
 
 # Install Yarn
