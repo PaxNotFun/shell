@@ -7,7 +7,7 @@ read -p "Enter the number of the script:  " choice
 
 case $choice in
     1)
-        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/heliactyl.sh)
+        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/holaclient.sh)
         ;;
     2)
         bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/panel.sh)
