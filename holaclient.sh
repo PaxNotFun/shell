@@ -31,7 +31,7 @@ certbot certonly --nginx -d portal.cometrakko.com
 
 echo "Instalando dependencias NodeJS y mas" | boxes -d peek -a c -s 40x1
 # Install Node.js and dependencies
-curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 apt-get install nodejs gcc g++ make -y
 
 # Navigate to HolaClient directory
