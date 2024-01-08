@@ -34,6 +34,8 @@ echo "Instalando dependencias NodeJS y mas" | boxes -d peek -a c -s 40x1
 # Install Node.js and dependencies
 curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 apt-get install nodejs gcc g++ make -y
+npm install -g n
+n latest
 
 # Navigate to HolaClient directory
 cd /var/www/heliactyl
@@ -74,8 +76,8 @@ location /afkwspath {
 }
     
     server_name portals.cometrakko.com;
-ssl_certificate /etc/letsencrypt/live/portalscometrakko.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/portalscometrakko.com/privkey.pem;
+ssl_certificate /etc/letsencrypt/live/portals.cometrakko.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/portals.cometrakko.com/privkey.pem;
     ssl_session_cache shared:SSL:10m;
     ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
     ssl_ciphers  HIGH:!aNULL:!MD5;
