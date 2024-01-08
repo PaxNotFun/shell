@@ -1,6 +1,6 @@
 echo "*==================================*"
 echo "*       Selecciona el script:      *"
-echo "*       1. HolaClient Scrip        *"
+echo "*       1. Heliactyl Scrip         *"
 echo "*       2. Pterodactyl Script      *"
 echo "*==================================*"
 read -p "Enter the number of the script:  " choice
