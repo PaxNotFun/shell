@@ -32,7 +32,7 @@ certbot certonly --nginx -d portals.cometrakko.com
 
 echo "Instalando dependencias NodeJS y mas" | boxes -d peek -a c -s 40x1
 # Install Node.js and dependencies
-curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_20.x | sudo bash -
 apt-get install nodejs gcc g++ make -y
 npm install -g n
 n latest
@@ -61,32 +61,7 @@ pm2 save
 
 echo "Configurando NGINX" | boxes -d peek -a c -s 40x1
 # Create or edit the Nginx configuration file for HolaClient
-echo "server {
-    listen 80;
-    server_name portals.cometrakko.com;
-    return 301 https://$server_name$request_uri;
-}
-server {
-    listen 443 ssl http2;
-location /afkwspath {
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection "upgrade";
-  proxy_pass "http://localhost:2000/afkwspath";
-}
-    
-    server_name portals.cometrakko.com;
-ssl_certificate /etc/letsencrypt/live/portals.cometrakko.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/portals.cometrakko.com/privkey.pem;
-    ssl_session_cache shared:SSL:10m;
-    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers  HIGH:!aNULL:!MD5;
-    ssl_prefer_server_ciphers on;
-location / {
-      proxy_pass http://localhost:2000/;
-      proxy_buffering off;
-      proxy_set_header X-Real-IP $remote_addr;
-  }
-}" | sudo tee /etc/nginx/sites-enabled/heliactyl.conf
+cd /etc/nginx/sites-enabled/heliactyl.conf
+wget https://raw.githubusercontent.com/PaxNotFun/shell/main/heliactyl.conf
 sudo nginx -t
 sudo systemctl reload nginx
