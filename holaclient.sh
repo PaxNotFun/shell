@@ -15,7 +15,7 @@ echo "Descargando Panel" | boxes -d peek -a c -s 40x1
 # Clone HolaClient repository
 rm -rf /var/www/panel
 rm -rf /var/www/heliactyl
-git clone https://github.com/HeliactylCP/panel.git /var/www/papel
+git clone https://github.com/HeliactylCP/panel.git /var/www/panel
 
 echo "Configurando Firewall" | boxes -d peek -a c -s 40x1
 # Install SSL and Firewall
