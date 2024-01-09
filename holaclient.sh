@@ -13,6 +13,7 @@ apt install unzip -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
 echo "Descargando Panel" | boxes -d peek -a c -s 40x1
 # Clone HolaClient repository
+rm -rf /var/www/heliactyl
 git clone https://github.com/HeliactylCP/panel.git /var/www/papel
 
 echo "Configurando Firewall" | boxes -d peek -a c -s 40x1
@@ -62,7 +63,8 @@ pm2 save
 
 echo "Configurando NGINX" | boxes -d peek -a c -s 40x1
 # Create or edit the Nginx configuration file for HolaClient
-cd /etc/nginx/sites-enabled/heliactyl.conf
+cd /etc/nginx/sites-enabled/
+rm -rf heliactyl.conf
 wget https://raw.githubusercontent.com/PaxNotFun/shell/main/heliactyl.conf
 sudo nginx -t
 sudo systemctl reload nginx
