@@ -18,4 +18,6 @@ firewall-cmd --zone=public --add-port=20/tcp --permanent
 firewall-cmd --zone=public --add-port=21/tcp --permanent
 firewall-cmd --reload
 
-wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
+wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh
+sudo bash install.sh aapanel
+apt remove ufw
