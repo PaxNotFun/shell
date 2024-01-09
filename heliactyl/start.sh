@@ -43,7 +43,7 @@ n latest
 mv /var/www/panel /var/www/heliactyl
 cd /var/www/heliactyl
 rm -rf settings.json
-wget https://raw.githubusercontent.com/PaxNotFun/shell/main/settings.json
+wget https://raw.githubusercontent.com/PaxNotFun/shell/main/heliactyl/settings.json
 
 # Install Yarn
 sudo apt-get update
@@ -66,6 +66,6 @@ echo "Configurando NGINX" | boxes -d peek -a c -s 40x1
 # Create or edit the Nginx configuration file for HolaClient
 cd /etc/nginx/sites-enabled/
 rm -rf heliactyl.conf
-wget https://raw.githubusercontent.com/PaxNotFun/shell/main/heliactyl.conf
+wget https://raw.githubusercontent.com/PaxNotFun/shell/main/heliactyl/heliactyl.conf
 sudo nginx -t
 sudo systemctl reload nginx
