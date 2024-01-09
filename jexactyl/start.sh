@@ -10,6 +10,7 @@ apt install git -y
 apt install nano -y
 apt install boxes -y
 apt install unzip -y
+apt install cron -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
 
 echo "Configurando Firewall" | boxes -d peek -a c -s 40x1
@@ -25,8 +26,7 @@ firewall-cmd --reload
 
 echo "Configurando SSl" | boxes -d peek -a c -s 40x1
 sudo apt install -y python3-certbot-nginx nginx
-rm /etc/nginx/sites-enabled/default
-certbot certonly --nginx -d portals.cometrakko.com
+certbot certonly --nginx -d console.cometrakko.com
 
 echo "Instalando y Configurando Dependencias" | boxes -d peek -a c -s 40x1
 apt install software-properties-common curl apt-transport-https ca-certificates gnupg -y
@@ -37,6 +37,7 @@ apt install php8.1 php8.1-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,cu
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 echo "Descargando Panel Y Configurando" | boxes -d peek -a c -s 40x1
+rm -rf /var/www/jexactyl
 mkdir -p /var/www/jexactyl
 cd /var/www/jexactyl
 curl -Lo panel.tar.gz https://github.com/jexactyl/jexactyl/releases/latest/download/panel.tar.gz
@@ -61,7 +62,9 @@ php artisan p:environment:database
 php artisan p:environment:mail
 php artisan migrate --seed --force
 php artisan p:user:make
-chown -R www-data:www-data
+chown -R www-data:www-data /var/www/jexactyl/*
+systemctl disable panel.service
+rm -rf panel.service
 (crontab -l ; echo "* * * * * php /var/www/jexactyl/artisan schedule:run >> /dev/null 2>&1") | crontab -
 echo "# Jexactyl Queue Worker File
 # ----------------------------------
@@ -80,8 +83,8 @@ RestartSec=5s
 
 [Install]
 WantedBy=multi-user.target" | sudo tee /etc/systemd/system/panel.service > /dev/null
-sudo systemctl enable --now panel.service
-sudo systemctl enable --now redis-server
+systemctl enable --now panel.service
+systemctl enable --now redis-server
 
 echo "Configurando NGINX" | boxes -d peek -a c -s 40x1
 rm /etc/nginx/sites-available/default; rm /etc/nginx/sites-enabled/default
