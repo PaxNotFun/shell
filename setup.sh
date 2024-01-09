@@ -8,13 +8,13 @@ read -p "Enter the number of the script:  " choice
 
 case $choice in
     1)
-        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/holaclient.sh)
+        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/heliactyl/start.sh)
         ;;
     2)
-        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/panel.sh)
+        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/pterodactyl/start.sh)
         ;;
     3)
-        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/jexactyl.sh)
+        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/jexactyl/start.sh)
         ;;
     *)
         echo "Invalid choice. Exiting."
