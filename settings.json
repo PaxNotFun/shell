@@ -98,7 +98,7 @@
           }
         },
         "rolePackages": {
-          "note": "This allows you to set a different plan to people who have a specific role however this requires the Discord bot to be configured and functioning",
+          "note": "This allows you to set a different plan to people who have a specific role; however, this requires the Discord bot to be configured and functioning",
           "roleServer": "1009298444805996545",
           "roles": {
             "Role ID": "1007506527336276010"
@@ -112,7 +112,7 @@
         }
       },
       "eggs": {
-       "paper": {
+        "paper": {
           "display": "Minecraft Java | Paper/Spigot",
           "minimum": {
             "ram": 1024,
@@ -137,11 +137,12 @@
               "backups": 0
             }
           }
-        },
+        }
+      },
       "coins": {
         "enabled": true,
         "store": {
-          "_comment": "The cost and per is not intended to used with 0. This is not intended to sell resources for coins. Make sure coins are enabled too, or else there can be errors.",
+          "_comment": "The cost and per are not intended to be used with 0. This is not intended to sell resources for coins. Make sure coins are enabled too, or else there can be errors.",
           "enabled": true,
           "ram": {
             "cost": 1000,
@@ -167,7 +168,7 @@
       "enabled": false,
       "widgetid": "none",
       "afk page": {
-        "_comment": "This will not effect any current arc.io sessions, and will require a restart to kick everyone out of the websocket sesison.",
+        "_comment": "This will not affect any current arc.io sessions, and will require a restart to kick everyone out of the WebSocket session.",
         "_comment2": "Make sure coins are enabled if you choose to enable this option!",
         "enabled": true,
         "_comment3": "If you change the path, you need to restart for it to take full effect.",
@@ -205,7 +206,7 @@
         "buy ram": true,
         "buy cpu": true,
         "buy disk": true
-      }, 
+      },
       "admin": {
         "set coins": true,
         "add coins": true,
@@ -219,7 +220,7 @@
     }
   },
   "antivpn": {
-    "note": "For antivpn to work, generate an apikey on https://proxycheck.io/. If you put no key, Heliactyl will disable antigen.",
+    "note": "For antivpn to work, generate an API key on https://proxycheck.io/. If you put no key, Heliactyl will disable antigen.",
     "status": true,
     "APIKey": "6br685-35p070-j7fv75-7233m0",
     "whitelistedIPs": ["IP address"]
