@@ -2,7 +2,7 @@ echo "*==================================*"
 echo "*       Selecciona el script:      *"
 echo "*       1. Heliactyl Scrip         *"
 echo "*       2. Pterodactyl Script      *"
-echo "*       3. Jexactyl Script        *"
+echo "*       3. Jexactyl Script         *"
 echo "*==================================*"
 read -p "Enter the number of the script:  " choice
 
