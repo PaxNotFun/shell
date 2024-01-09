@@ -40,7 +40,7 @@ npm install -g n
 n latest
 
 # Navigate to HolaClient directory
-cp /var/www/panel /var/www/heliactyl
+mv /var/www/panel /var/www/heliactyl
 cd /var/www/heliactyl
 rm -rf settings.json
 wget https://raw.githubusercontent.com/PaxNotFun/shell/main/settings.json
