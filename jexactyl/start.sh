@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -e "\e[31mESTAS REINSTALANDO TODO PUEDE OCASIONAR UN MAL FUNCIONAMIENTO\e[0m" | boxes -d peek -a c -s 40x11
+
 # Update and upgrade system packages
 apt update
 apt upgrade -y
