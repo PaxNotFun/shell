@@ -11,7 +11,6 @@ apt install nano -y
 apt install boxes -y
 apt install unzip -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
-echo "Descargando Panel" | boxes -d peek -a c -s 40x1
 
 echo "Configurando Firewall" | boxes -d peek -a c -s 40x1
 # Install SSL and Firewall
@@ -30,14 +29,14 @@ rm /etc/nginx/sites-enabled/default
 certbot certonly --nginx -d portals.cometrakko.com
 
 echo "Instalando y Configurando Dependencias" | boxes -d peek -a c -s 40x1
-apt install software-properties-common -y curl apt-transport-https ca-certificates gnupg
+apt install software-properties-common curl apt-transport-https ca-certificates gnupg -y
 LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 add-apt-repository ppa:redislabs/redis -y
 apt update
 apt install php8.1 php8.1-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar redis-server -y
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
-echo "Descargando y Configurando Panel Jexactyl" | boxes -d peek -a c -s 40x1
+echo "Descargando Panel Y Configurando" | boxes -d peek -a c -s 40x1
 mkdir -p /var/www/jexactyl
 cd /var/www/jexactyl
 curl -Lo panel.tar.gz https://github.com/jexactyl/jexactyl/releases/latest/download/panel.tar.gz
@@ -59,6 +58,7 @@ composer install --no-dev --optimize-autoloader
 php artisan key:generate --force
 php artisan p:environment:setup
 php artisan p:environment:database
+php artisan p:environment:mail
 php artisan migrate --seed --force
 php artisan p:user:make
 chown -R www-data:www-data
@@ -86,7 +86,7 @@ sudo systemctl enable --now redis-server
 echo "Configurando NGINX" | boxes -d peek -a c -s 40x1
 rm /etc/nginx/sites-available/default; rm /etc/nginx/sites-enabled/default
 
-CODIGO FOR NGINX FILE
+wget https://raw.githubusercontent.com/PaxNotFun/shell/main/jexactyl/panel.conf
 
 ln -s /etc/nginx/sites-available/panel.conf /etc/nginx/sites-enabled/panel.conf
 nginx -t
