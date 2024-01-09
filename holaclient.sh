@@ -13,6 +13,7 @@ apt install unzip -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
 echo "Descargando Panel" | boxes -d peek -a c -s 40x1
 # Clone HolaClient repository
+rm -rf /var/www/panel
 rm -rf /var/www/heliactyl
 git clone https://github.com/HeliactylCP/panel.git /var/www/papel
 
