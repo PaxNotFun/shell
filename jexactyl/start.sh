@@ -89,6 +89,7 @@ systemctl enable --now redis-server
 echo "Configurando NGINX" | boxes -d peek -a c -s 40x1
 rm /etc/nginx/sites-available/default; rm /etc/nginx/sites-enabled/default
 
+rm -rf /etc/nginx/sites-available/panel.conf
 wget https://raw.githubusercontent.com/PaxNotFun/shell/main/jexactyl/panel.conf
 
 ln -s /etc/nginx/sites-available/panel.conf /etc/nginx/sites-enabled/panel.conf
