@@ -15,7 +15,7 @@ case $choice in
         bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/pterodactyl/start.sh)
         ;;
     3)
-        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/jexactyl/start.sh)
+        bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/jexactyl/start2.sh)
         ;;
     4)
         bash <(curl -s https://raw.githubusercontent.com/PaxNotFun/shell/main/aapanel/start.sh)
