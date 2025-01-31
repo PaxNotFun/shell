@@ -1,7 +1,8 @@
 #!/bin/bash
 apt update
 apt upgrade -y
-apt install cron nano
+apt install boxes -y
+apt install cron nano -y
 apt install firewalld -y
 echo "Estamos Instalando Todo Espera Por Favor " | boxes -d peek -a c -s 40x11
 
