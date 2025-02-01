@@ -13,5 +13,5 @@ firewall-cmd --zone=public --add-port=443/tcp --permanent
 firewall-cmd --zone=public --add-port=21/tcp --permanent
 firewall-cmd --zone=public --add-port=22/tcp --permanent
 firewall-cmd --reload
-reboot
+
 bash <(curl -s https://pterodactyl-installer.se)
